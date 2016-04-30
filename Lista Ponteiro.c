@@ -38,6 +38,8 @@ int main(){
     int vetor[quantidade];
     int numero;
     entrarValores(vetor, quantidade);
+
+
     while(true){
         int opcao;
         printf("\n\n\n\t===! Escolha uma das opções !===\n\n\t1 Para Ordenar\n\t2 Para mostrar o maior");
@@ -80,7 +82,7 @@ int main(){
                 junta2(vetor, quantidade, 1);
                 break;
             default:
-                printf("\n\n\tObrigado! Ate Logo\n\n");
+                printf("\n\n\tSo long and thanks for all the fish!\n\n");
                 true = 0;
                 break;
 
