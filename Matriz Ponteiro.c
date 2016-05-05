@@ -6,7 +6,7 @@ float **liberarMatrizDinamica(int linha, float **matriz);
 
 int main(){
 
-    int linhas, colunas;
+    int i,linhas, colunas,j;
 
     printf("Digite o numero de linhas da sua matriz: ");
     scanf("%d", &linhas);
@@ -14,19 +14,38 @@ int main(){
     printf("Digite agora as colunas: ");
     scanf("%d", &colunas);
 
+	float **matriz = alocarMatrizDinamica(linhas,colunas);
+	
+	for(i = 0; i < linhas; i++){
+		for(j = 0; j < colunas; j++){
+			printf("Digite o valor da posicao[ %d ] [ %d ]: ", i, j);
+			scanf("%f", &matriz[i][j]);
+		}
+	}
+	
+	system("cls");
+	
+	for(i = 0; i < linhas; i++){
+		for(j = 0; j < colunas; j++){
+			printf("\t[ %d ]", *(*(matriz + i) + j));
+		}
+		printf("\n");
+	}
 
     return 0;
 }
 
 
 float **alocarMatrizDinamica(int linha, int coluna){
-
-    int **matriz = (int**) malloc(linha * sizeof(int *));
+	
+    float **matriz = (float**) malloc(linha * sizeof(float *));
     int i;
 
     for (i = 0; i < linha; i++){
-        *(matriz ) = (int*) malloc(coluna * sizeof(int));
+        *(matriz + i) = (float*) malloc(coluna * sizeof(float));
     }
+    
+    return matriz;
 }
 
 float **liberarMatrizDinamica(int linha, float **matriz){
