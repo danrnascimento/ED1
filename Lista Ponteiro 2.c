@@ -35,9 +35,7 @@ int * preencher(int tamanho){
         printf("Digite o valor do item [ %d ]: ", i);
         scanf("%d", (vetor + i));
     }
-
     return vetor;
-
 }
 
 int * organizar(int tamanho, int *vetor){
