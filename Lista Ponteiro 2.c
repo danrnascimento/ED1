@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * preencher(int tamanho, int *vetor);
+int * preencher(int tamanho);
 int * organizar(int tamanho, int *vetor);
 void imprimir(int tamanho, int *vetor);
 
@@ -15,9 +15,8 @@ int main(){
 
     system("clear");
 
-    vetor = (int *) malloc( tamanho *  sizeof(int));
 
-    int *vetorPreenchido = preencher(tamanho, vetor);
+    int *vetorPreenchido = preencher(tamanho);
     int *vetorOrganizado = organizar(tamanho, vetorPreenchido);
 
     system("clear");
@@ -27,7 +26,9 @@ int main(){
     return 0;
 }
 
-int * preencher(int tamanho, int *vetor){
+int * preencher(int tamanho){
+
+    int *vetor = (int *) malloc( tamanho *  sizeof(int));
 
     int i;
     for(i = 0; i < tamanho; i++){
