@@ -1,19 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
     @author Daniel Nascimento
 */
+
 int equals(char *str1, char *str2);
 int equalsIgnoreCase(char *str1, char *str2);
+int length(char *str);
 char *toUpperCase(char *str);
 char *toLowerCase(char *str);
 
 int main(){
 
-    char pa[] = "Daniel";
-    char pa2[] = "Daniel";
+    char pa[] = "Daniel Rocha";
+    char pa2[] = "DANIEL";
 
-    printf("%d", equals(pa,pa2));
+    printf("\n%d", equals(pa,pa2));
+    printf("\n%d", equalsIgnoreCase(pa,pa2));
+    printf("\n%d", length(pa));
 
     printf("\n%s", toUpperCase(pa));
     printf("\n%s", toLowerCase(pa));
@@ -63,7 +68,7 @@ char *toLowerCase(char *str){
 
 }
 
-int equalsIgonoreCase(char *str1, char *str2){
+int equalsIgnoreCase(char *str1, char *str2){
 
     char *auxChar1 = toUpperCase(str1);
     char *auxChar2 = toUpperCase(str2);
@@ -74,5 +79,18 @@ int equalsIgonoreCase(char *str1, char *str2){
         return 1;
     else
         return 0;
+
+}
+
+int length(char *str){
+
+    int count = 0;
+
+    while((*str)){
+        str++;
+        count++;
+    }
+
+    return count;
 
 }
