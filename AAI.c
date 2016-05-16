@@ -8,6 +8,8 @@
 int equals(char *str1, char *str2);
 int equalsIgnoreCase(char *str1, char *str2);
 int length(char *str);
+int lastIndexOf(char *str, char caracter);
+int firstIndexOf(char *str);
 char *toUpperCase(char *str);
 char *toLowerCase(char *str);
 
@@ -19,6 +21,7 @@ int main(){
     printf("\n%d", equals(pa,pa2));
     printf("\n%d", equalsIgnoreCase(pa,pa2));
     printf("\n%d", length(pa));
+    printf("\n%d", lastIndexOf(pa, ' '));
 
     printf("\n%s", toUpperCase(pa));
     printf("\n%s", toLowerCase(pa));
@@ -92,5 +95,18 @@ int length(char *str){
     }
 
     return count;
+
+}
+
+int lastIndexOf(char *str, char caracter){
+
+    int tamanho = length(str);
+    int i, achou = 0,numero;
+
+    while ((*str) != caracter){
+        str++;
+        achou++;
+        numero = achou;
+    }
 
 }
