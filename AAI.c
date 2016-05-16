@@ -4,7 +4,8 @@
     @author Daniel Nascimento
 */
 int equals(char *str1, char *str2);
-char *toUperCase(char *str);
+int equalsIgnoreCase(char *str1, char *str2);
+char *toUpperCase(char *str);
 char *toLowerCase(char *str);
 
 int main(){
@@ -14,7 +15,7 @@ int main(){
 
     printf("%d", equals(pa,pa2));
 
-    printf("\n%s", toUperCase(pa));
+    printf("\n%s", toUpperCase(pa));
     printf("\n%s", toLowerCase(pa));
 
 
@@ -34,7 +35,7 @@ int equals(char *str1, char *str2){
         return 0;
 }
 
-char *toUperCase(char *str){
+char *toUpperCase(char *str){
 
     char *aux = str;
     while(*aux != '\0'){
@@ -59,5 +60,19 @@ char *toLowerCase(char *str){
     }
 
     return str;
+
+}
+
+int equalsIgonoreCase(char *str1, char *str2){
+
+    char *auxChar1 = toUpperCase(str1);
+    char *auxChar2 = toUpperCase(str2);
+
+    int igual = equals(auxChar1, auxChar2);
+
+    if (igual)
+        return 1;
+    else
+        return 0;
 
 }
