@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+    @author Daniel Nascimento
+*/
 int equals(char *str1, char *str2);
 char *toUperCase(char *str);
 char *toLowerCase(char *str);
