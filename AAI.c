@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
     @author Daniel Nascimento
@@ -9,23 +10,33 @@ int equals(char *str1, char *str2);
 int equalsIgnoreCase(char *str1, char *str2);
 int length(char *str);
 int lastIndexOf(char *str, char caracter);
-int firstIndexOf(char *str);
+int firstIndexOf(char *str, char caracter);
 char *toUpperCase(char *str);
 char *toLowerCase(char *str);
+char *replace(char *str, char velho, char novo);
+
+struct usuario{
+    char nome[100];
+    char endereco[100];
+    char dataNascimento[100];
+};
 
 int main(){
 
-    char pa[] = "Daniel Rocha";
-    char pa2[] = "DANIEL";
+    struct usuario *user;
 
-    printf("\n%d", equals(pa,pa2));
-    printf("\n%d", equalsIgnoreCase(pa,pa2));
-    printf("\n%d", length(pa));
-    printf("\n%d", lastIndexOf(pa, ' '));
+    user = (usuario *)malloc(3 * sizeof(usuario));
+    int i;
 
-    printf("\n%s", toUpperCase(pa));
-    printf("\n%s", toLowerCase(pa));
+    for(i = 0; i < 3; i++){
 
+        printf("\n\n------\n\n");
+        printf("Nome: %s", user.nome);
+        printf("Endereco: %s", user.endereco);
+        printf("dataNascimento: %s",user.dataNascimento);
+
+        user++;
+    }
 
     return 0;
 }
@@ -37,10 +48,8 @@ int equals(char *str1, char *str2){
         str2++;
     }
 
-    if((*str1 == *str2) && (!*str1))
-        return 1;
-    else
-        return 0;
+    return *str1 == *str2 && !*str1 ? 1 : 0;
+
 }
 
 char *toUpperCase(char *str){
@@ -76,12 +85,7 @@ int equalsIgnoreCase(char *str1, char *str2){
     char *auxChar1 = toUpperCase(str1);
     char *auxChar2 = toUpperCase(str2);
 
-    int igual = equals(auxChar1, auxChar2);
-
-    if (igual)
-        return 1;
-    else
-        return 0;
+    return equals(auxChar1, auxChar2) == 1 ? 1 : 0;
 
 }
 
@@ -101,12 +105,33 @@ int length(char *str){
 int lastIndexOf(char *str, char caracter){
 
     int tamanho = length(str);
-    int i, achou = 0,numero;
+    int i;
 
-    while ((*str) != caracter){
+    for (i = 0; i < tamanho; i++){
+        if(*str == caracter){
+            return i - 1;
+        }
         str++;
-        achou++;
-        numero = achou;
     }
 
 }
+
+int firstIndexOf(char *str, char caracter){
+
+    int tamanho = length(str);
+    int i;
+
+    for (i = 0; i < tamanho; i++){
+        if(*str == caracter){
+            return i + 1;
+        }
+        str++;
+    }
+}
+
+char *replace(char *str, char velho, char novo){
+
+
+
+}
+
