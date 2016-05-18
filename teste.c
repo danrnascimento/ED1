@@ -15,22 +15,9 @@ int main(){
 
     int quantidadeUsuarios, i;
     printf("Quantos usuarios deseja cadastrar? ");
+    fflush(stdin);
     scanf("%d", &quantidadeUsuarios);
 
-    usuario user[quantidadeUsuarios];
-
-    for(i = 0; i < quantidadeUsuarios; i++){
-
-        printf("\n\n--------------\n\n");
-        printf("\nEntre com o nome do usuario %d: ", i + 1);
-        gets(user[i].nome);
-        printf("\nEntre com o endereco do usuario %d: ", i + 1);
-        gets(user[i].endereco);
-        printf("\nEntre com a data de Nascimento do usuario %d: ", i + 1);
-        gets(user[i].dataNascimento);
-
-    }
-
-
+    usuario *user = (usuario *)malloc(quantidadeUsuarios * sizeof(usuario));
 
 }

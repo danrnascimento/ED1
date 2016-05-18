@@ -41,34 +41,7 @@ struct{
     .replace = replace
 
 };
-/*
-int main(){
 
-    char *nome = (char *)malloc(sizeof(char));
-    printf("\nNome: ");
-    gets(nome);
-    printf("\nO tamanho é : %d", String.length(nome));
-    char *nome2 = (char *)malloc(sizeof(char));
-    printf("\nNome: ");
-    gets(nome2);
-    printf("\n é igual? : %d", String.equals(nome, nome2));
-    printf("\n é igual? : %d", String.equalsIgnoreCase(nome, nome2));
-    printf("\n é antes do espaco? : %d", String.lastIndexOf(nome, ' '));
-    printf("\n é depois do espaco? : %d", String.firstIndexOf(nome, ' '));
-    printf("\n Upper: %s", String.toUpperCase(nome2));
-    printf("\n Lower: %s", String.toLowerCase(nome));
-
-    free(nome);
-
-    nome = (char *)malloc(sizeof(char));
-    printf("\nNome: ");
-    gets(nome);
-    printf("\n\n\n\n\n\n Substring: %s", String.substring(nome, 0, 3));
-    printf("\n\n\n\n\n\n Replace: %s", String.replace(nome, 'a', 'x'));
-
-    return 0;
-}
-*/
 int equals(char *str1, char *str2){
 
     while((*str1 == *str2) && (*str1)){
@@ -172,7 +145,7 @@ char *replace(char *str, char velho, char novo){
 
 char *substring(char *str, int posicaoInicio, int posicaoFinal){
 
-    char nomeAux[10];
+    char nomeAux[100];
     int i,j = 0;
     for(i = posicaoInicio; i < posicaoFinal; i++){
         nomeAux[j] = str[i];
