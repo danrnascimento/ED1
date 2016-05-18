@@ -16,6 +16,7 @@ char *toLowerCase(char *str);
 char *substring(char *str, int posicaoInico, int posicaoFina);
 char *replace(char *str, char velho, char novo);
 
+// struct String
 struct{
 
     int (*length)(char[]);
@@ -42,6 +43,7 @@ struct{
 
 };
 
+//funcao para verificar se e igual
 int equals(char *str1, char *str2){
 
     while((*str1 == *str2) && (*str1)){
@@ -53,6 +55,7 @@ int equals(char *str1, char *str2){
 
 }
 
+//colocando tudo em maiusculo
 char *toUpperCase(char *str){
 
     char *aux = str;
@@ -67,6 +70,7 @@ char *toUpperCase(char *str){
 
 }
 
+//colocando tudo em minusculo
 char *toLowerCase(char *str){
 
     char *aux = str;
@@ -81,6 +85,7 @@ char *toLowerCase(char *str){
 
 }
 
+//comparando ignorando case
 int equalsIgnoreCase(char *str1, char *str2){
 
     char *auxChar1 = toUpperCase(str1);
@@ -90,6 +95,7 @@ int equalsIgnoreCase(char *str1, char *str2){
 
 }
 
+//veificar tamanho da string
 int length(char *str){
 
     int count = 0;
@@ -103,6 +109,7 @@ int length(char *str){
 
 }
 
+//mostrar ultimo index antes do caracter desejado
 int lastIndexOf(char *str, char caracter){
 
     int tamanho = length(str);
@@ -117,6 +124,7 @@ int lastIndexOf(char *str, char caracter){
 
 }
 
+//mostrar primeiro indice depois do caracter desejado
 int firstIndexOf(char *str, char caracter){
 
     int tamanho = length(str);
@@ -130,6 +138,7 @@ int firstIndexOf(char *str, char caracter){
     }
 }
 
+//trocar caracteres antigos por novos
 char *replace(char *str, char velho, char novo){
 
     int i = 0;
@@ -143,6 +152,7 @@ char *replace(char *str, char velho, char novo){
     return str;
 }
 
+//selecionar parte da Sring
 char *substring(char *str, int posicaoInicio, int posicaoFinal){
 
     char nomeAux[100];
