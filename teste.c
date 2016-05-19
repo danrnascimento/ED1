@@ -13,11 +13,12 @@ typedef struct{
 
 int main(){
 
-    int quantidadeUsuarios, i;
-    printf("Quantos usuarios deseja cadastrar? ");
-    fflush(stdin);
-    scanf("%d", &quantidadeUsuarios);
+    char *nome = (char *)malloc(100);
+    gets(nome);
+    int index = String.firstIndexOf(nome, ',');
+    int length = String.length(nome);
+    nome = String.substring(nome, index, length);
 
-    usuario *user = (usuario *)malloc(quantidadeUsuarios * sizeof(usuario));
+    printf("%s ==== %d",nome, String.length(nome));
 
 }

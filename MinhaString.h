@@ -154,13 +154,13 @@ char *replace(char *str, char velho, char novo){
 //selecionar parte da Sring
 char *substring(char *str, int posicaoInicio, int posicaoFinal){
 
-    char nomeAux[100];
+    char nomeAux[101];
     int i,j = 0;
     for(i = posicaoInicio; i < posicaoFinal; i++){
         nomeAux[j] = str[i];
         j++;
     }
-
+    nomeAux[j] = '\0';
     return nomeAux;
 
 }
