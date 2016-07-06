@@ -1,5 +1,5 @@
 #Universidade FUMEC
 
-Lista de Atividades de ED1
+Lista de Atividades de Estrutura de Dados I
 
 
